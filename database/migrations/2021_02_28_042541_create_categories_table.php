@@ -14,8 +14,17 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
+            // Buat file id, otomasi menjadi auto increment dan primary key
             $table->id();
+
+            // Buat file nama
+            $table->string("name");
+            
+            // Buat field create_at, update_at
             $table->timestamps();
+
+            // Buat field untuk fitur soft delete
+            $table->softDeletes();
         });
     }
 
