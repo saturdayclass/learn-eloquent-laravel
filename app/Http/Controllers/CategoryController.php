@@ -15,14 +15,14 @@ class CategoryController extends Controller
         return "TODO: Menampilkan hasil search bedasarkan nama kategori";
     }
 
-    public function delete(){
+    public function delete($id){
         return "TODO: Menghapus (soft delete) kategori bedasarkan ID";
     }
 
-    public function restore(){
+    public function restore($id){
         return "TODO: Me-restore data kategoru yang statusnya soft delete";
     }
-    public function deletePermanent(){
+    public function deletePermanent($id){
         return "TODO: Menghapus data kategori secara permanent";
     }
 }
