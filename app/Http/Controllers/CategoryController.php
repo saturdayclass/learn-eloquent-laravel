@@ -3,26 +3,40 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Models\Category;
 
 class CategoryController extends Controller
 {
     //
     public function index(){
-        return "TODO: Menampilkan semua data kategori dari DB";
+        return Category::all();
     }
     
-    public function search(){
-        return "TODO: Menampilkan hasil search bedasarkan nama kategori";
+    public function search(Request $request){
+        $keyword = $request->get("name");
+        return Category::where("name", "LIKE", "%$keyword%")->get();
     }
 
     public function delete($id){
-        return "TODO: Menghapus (soft delete) kategori bedasarkan ID";
+        $category = Category::findOrFail($id);
+
+        if(!$category->trashed()){
+            $category->delete();
+            return "Kategori $category->name berhasil di hapus";
+        }
     }
 
     public function restore($id){
-        return "TODO: Me-restore data kategoru yang statusnya soft delete";
+        $category = Category::withTrashed($id)->findOrFail($id);
+
+        if(!$category->trashed()){
+            return "Kategori ga perlu di restore";
+        }
+        return "$category->name berhasil di restore";
     }
     public function deletePermanent($id){
-        return "TODO: Menghapus data kategori secara permanent";
+        $category =  Category::withTrashed($id)->findOrFail($id);
+        $category->forceDelete();
+        return "$category->name berhasil di hapus dan tidak bisa di restore";
     }
 }
