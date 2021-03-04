@@ -9,7 +9,8 @@ class CategoryController extends Controller
 {
     //
     public function index(){
-        return Category::all();
+        $kategori = Category::all();
+        return view('kategori.index', compact('kategori'));
     }
     
     public function search(Request $request){
