@@ -1,4 +1,4 @@
 TODO: Tampilkan semua list categori
-@foreach($kategori as $k) 
-  <li>{{$k->name}}</li>
-@endforeach
+<li>{{$kategori[0]->name}}</li>
+<!-- @foreach($kategori as $k) 
+@endforeach -->

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\CategoryController;
+use \App\Http\Controllers\SalamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::group(['prefix' => 'latihan/kategori'], function(){
     Route::get('/{id}/restore', [CategoryController::class, "restore"]);
     Route::get('/{id}/permanent-delete', [CategoryController::class, "deletePermanent"]);
 });
+
+Route::get('/ucapkan-salam', [SalamController::class, "index"]);
