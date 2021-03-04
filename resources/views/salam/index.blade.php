@@ -1,1 +1,1 @@
-{{ $kalimat }}
+{{ $kalimat}}
