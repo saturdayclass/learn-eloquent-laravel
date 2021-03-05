@@ -29,6 +29,7 @@ Route::group(['prefix' => 'latihan/kategori'], function(){
     Route::get('/{id}/delete', [CategoryController::class, "delete"]);
     Route::get('/{id}/restore', [CategoryController::class, "restore"]);
     Route::get('/{id}/permanent-delete', [CategoryController::class, "deletePermanent"]);
+    Route::view('layouts', 'child');
 });
 
 Route::get('/ucapkan-salam', [SalamController::class, "index"]);
