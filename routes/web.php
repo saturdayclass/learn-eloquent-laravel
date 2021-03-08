@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\CategoryController;
 use \App\Http\Controllers\SalamController;
+use \App\Http\Controllers\HandphoneController;
+use \App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +35,6 @@ Route::group(['prefix' => 'latihan/kategori'], function(){
 });
 
 Route::get('/ucapkan-salam', [SalamController::class, "index"]);
+
+Route::get('/handphone', [HandphoneController::class, "index"]);
+Route::get('/users', [UserController::class, "index"]);

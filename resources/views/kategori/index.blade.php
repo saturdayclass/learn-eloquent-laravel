@@ -1,8 +1,8 @@
-TODO: Tampilkan semua list categori
-<!-- @foreach($kategori as $k) 
-@endforeach -->
-
 @extends('app')
+
+@section('title')
+  Data Kategori
+@endsection
 
 @section('content')
   @component("alert", ["type" => "success"])
