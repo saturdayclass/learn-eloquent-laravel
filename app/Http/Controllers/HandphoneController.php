@@ -14,11 +14,4 @@ class HandphoneController extends Controller
         $user = $handphone->user;
         return $user;
     }
-
-    public function create(){
-        $handphone_baru = new Handphone(["phone_num" => "8236273"]);
-        $user = User::find(1);
-
-        $user->handphone()->create($handphone_baru);
-    }
 }
